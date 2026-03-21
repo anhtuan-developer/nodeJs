@@ -11,7 +11,7 @@
   "type": "commonjs",
   "main": "sever.js",
   "scripts": {
-    "start": "node sever.js",
+    "dev": "node sever.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
