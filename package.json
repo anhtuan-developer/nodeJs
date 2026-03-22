@@ -11,10 +11,11 @@
   "type": "commonjs",
   "main": "sever.js",
   "scripts": {
-    "dev": "node sever.js",
+    "dev": "node ./src/sever.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "ejs": "^3.1.8",
     "express": "4.18.2"
   }
 }
