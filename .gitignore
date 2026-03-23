@@ -1,2 +1,3 @@
 node_modules
 .env
+# những file không cần đẩy lên git 
