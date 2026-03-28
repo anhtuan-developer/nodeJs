@@ -1,13 +1,11 @@
 const express = require("express");
+const { getHomepage, getTrangchu } = require("../controllers/homeController");
 const router = express.Router();
 
+// router.method("/route", handle)
 
-router.get("/", (req, res) => {
-  res.send("Hello World!welcome to my website");
-});
+router.get("/", getHomepage);
 
-router.get("/trangchu", (req, res) => {
-  res.render("sample");
-});
+router.get("/trangchu", getTrangchu);
 
 module.exports = router;// export deffault
