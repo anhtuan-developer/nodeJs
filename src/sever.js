@@ -15,9 +15,14 @@ app.use("/", webRoutes);
 //test connection
 
 //simple query
-connection.query("select * from Users u;", function (err, results) {
-  console.log(">>>>results:", results);
-});
+connection.query('select * from Users u;', 
+  function (err, results) {
+    if(results){
+      console.log("Results:", results);
+    }else{
+      console.log("Error:", err);
+    }
+  });
 
 app.listen(port, hostname, () => {
   console.log(`Example app listening on port ${port}`);
