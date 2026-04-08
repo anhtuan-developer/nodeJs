@@ -30,18 +30,21 @@
   background-color: #04aa6d;
   color: white;
 }
-
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 fieldset {
   background-color: #eeeeee;
   width: 500px;
-  margin: 0 auto;
-  margin-top: 10px;
-  padding-left: 5px;
+  padding-left: 10px;
 }
 
 legend {
-  background-color: black;
-  color: white;
+  background-color: gray;
+  color: balck;
   padding: 5px 10px;
 }
 

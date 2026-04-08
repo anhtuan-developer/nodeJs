@@ -1,11 +1,12 @@
 const express = require("express");
-const { getHomepage, getTrangchu} = require("../controllers/homeController");
+const { getHomepage, getTrangchu , createNewUser} = require("../controllers/homeController");
 const router = express.Router();
 
 // router.method("/route", handle)
 
 router.get("/", getHomepage);
-
 router.get("/trangchu", getTrangchu);
+
+router.post("/create-user", createNewUser);
 
 module.exports = router;// export deffault

@@ -5,6 +5,11 @@ const getHomepage = (req, res) =>{
 const getTrangchu = (req , res) =>{
     res.render("sample");
 }
+
+const createNewUser =(req, res) =>{
+    console.log(">>> req.body:", req.body);
+    res.send("create a new user");
+}
 module.exports = { 
-    getHomepage, getTrangchu
+    getHomepage, getTrangchu, createNewUser
 }
