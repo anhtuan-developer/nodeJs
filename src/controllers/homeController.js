@@ -1,15 +1,30 @@
+const connection = require("../config/database");
 
-const getHomepage = (req, res) =>{
-    return res.render("home")
-}
-const getTrangchu = (req , res) =>{
-    res.render("sample");
-}
+const getHomepage = (req, res) => {
+  return res.render("home");
+};
+const getTrangchu = (req, res) => {
+  res.render("sample");
+};
 
-const createNewUser =(req, res) =>{
-    console.log(">>> req.body:", req.body);
-    res.send("create a new user");
-}
-module.exports = { 
-    getHomepage, getTrangchu, createNewUser
-}
+const createNewUser = (req, res) => {
+    let email = req.body.email;
+    let name = req.body.name;
+    let city = req.body.city;
+
+  connection.query(
+    `INSERT INTO 
+    Users (email, name , city) 
+    VALUES (?, ?, ?)`,
+    [email, name, city],
+    function (err, results) {
+      console.log(results);
+      res.send(`create users succeed`);
+    },
+  );
+};
+module.exports = {
+  getHomepage,
+  getTrangchu,
+  createNewUser,
+};
