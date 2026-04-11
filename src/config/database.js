@@ -1,5 +1,5 @@
 require("dotenv").config(); // khai báo dotenv để sử dụng biến môi trường
-const mysql = require("mysql2"); // khai báo mysql2 để kết nối database
+const mysql = require("mysql2/promise"); // khai báo mysql2 để kết nối database
 
 
 // // create the connection to database
