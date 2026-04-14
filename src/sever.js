@@ -20,14 +20,14 @@ app.use("/", webRoutes);
 //test connection
 
 //simple query
-(async () => {
-  try {
-    let [results] = await connection.query("select * from Users u;");
-    console.log("Results:", results);
-  } catch (err) {
-    console.log("Error:", err);
-  }
-})();
+// (async () => {
+//   try {
+//     let [results] = await connection.query("select * from Users u;");
+//     console.log("Results:", results);
+//   } catch (err) {
+//     console.log("Error:", err);
+//   }
+// })();
 app.listen(port, hostname, () => {
   console.log(`Example app listening on port ${port}`);
 });

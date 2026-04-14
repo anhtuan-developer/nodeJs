@@ -10,6 +10,9 @@
     <div class="topnav">
       <a class="active" href="/">Home</a>
       <a href="/create">News</a>
+      <a  href="/update">edit User</a>
+
+
     </div>
     <div class="table_container">
       <div class="title">list users</div>
@@ -19,31 +22,22 @@
           <th>Email</th>
           <th>Name</th>
           <th>City</th>
+          <th>Actions</th>
         </tr>
-        <tr>
-          <td>Peter</td>
-          <td>Griffin</td>
-          <td>$100</td>
-          <td>New York</td>
+        
+        
+     <% listUsers.forEach(function(user , index) { %>
+      <tr>
+          <td><%= index + 1 %></td>
+          <td><%= user.email %></td>
+          <td><%= user.name %></td>
+          <td><%= user.city %></td>
+          <td>
+            <button>Edit</button>
+            <button>Delete</button>
+          </td>
         </tr>
-        <tr>
-          <td>Lois</td>
-          <td>Griffin</td>
-          <td>$150</td>
-          <td>Los Angeles</td>
-        </tr>
-        <tr>
-          <td>Joe</td>
-          <td>Swanson</td>
-          <td>$300</td>
-          <td>Chicago</td>
-        </tr>
-        <tr>
-          <td>Cleveland</td>
-          <td>Brown</td>
-          <td>$250</td>
-          <td>Houston</td>
-        </tr>
+ <% }); %> 
       </table>
     </div>
   </body>

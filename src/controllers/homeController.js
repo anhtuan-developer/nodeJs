@@ -1,7 +1,9 @@
 const connection = require("../config/database");
-
-const getHomepage = (req, res) => {
-  return res.render("home");
+const { getAllUsers } = require("../services/CRUDServives");
+const getHomepage = async (req, res) => {
+  const results = await getAllUsers();
+  console.log("check results:", results);
+  return res.render("home", { listUsers: results });
 };
 const getTrangchu = (req, res) => {
   res.render("sample");
@@ -15,8 +17,8 @@ const createNewUser = async (req, res) => {
   let city = req.body.city;
 
   // connection.query(
-  //   `INSERT INTO 
-  //   Users (email, name , city) 
+  //   `INSERT INTO
+  //   Users (email, name , city)
   //   VALUES (?, ?, ?)`,
   //   [email, name, city],
   //   function (err, results) {
@@ -28,12 +30,15 @@ const createNewUser = async (req, res) => {
     `INSERT INTO Users (email, name , city) VALUES (?, ?, ?)`,
     [email, name, city],
   );
-  console.log(">>> check results:", results);
-  res.send(`create users succeed`);
+  return res.redirect("/");
+};
+const getUpdatePage = (req, res) => {
+  res.render("edit");
 };
 module.exports = {
   getHomepage,
   getTrangchu,
   createNewUser,
   getCreatePage,
+  getUpdatePage,
 };
