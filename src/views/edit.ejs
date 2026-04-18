@@ -8,19 +8,32 @@
   </head>
   <body>
     <div class="topnav">
-      <a  href="/">Home</a>
-      <a href="/create">News</a>
-      <a class="active" href="/update">edit User</a>
+      <a href="/">Home</a>
+      <a href="/create">Create User</a>
     </div>
     <form action="create-user" method="POST">
       <fieldset>
         <legend>Add new users:</legend>
         <label for="fname">Email:</label>
-        <input type="email" id="email" name="email" /><br /><br />
+        <input
+          type="email"
+          value="<%= userEdit.email  %?>"
+          name="email"
+        /><br /><br />
         <label for="lname">Name:</label>
-        <input type="text" id="name" name="name" /><br /><br />
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value="<%= userEdit.name %>"
+        /><br /><br />
         <label for="city">City:</label>
-        <input type="text" id="city" name="city" /><br /><br />
+        <input
+          type="text"
+          id="city"
+          name="city"
+          value="<%= userEdit.city %>"
+        /><br /><br />
         <input type="submit" value="update" />
       </fieldset>
     </form>

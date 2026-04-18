@@ -9,8 +9,7 @@
   <body>
     <div class="topnav">
       <a class="active" href="/">Home</a>
-      <a href="/create">News</a>
-      <a  href="/update">edit User</a>
+      <a href="/create">Create User</a>
 
 
     </div>
@@ -33,7 +32,7 @@
           <td><%= user.name %></td>
           <td><%= user.city %></td>
           <td>
-            <button>Edit</button>
+            <a href="/update/<%= index + 1 %>">Edit</a>
             <button>Delete</button>
           </td>
         </tr>
