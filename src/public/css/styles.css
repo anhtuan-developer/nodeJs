@@ -30,7 +30,7 @@
   background-color: #04aa6d;
   color: white;
 }
-form {
+.form {
   display: flex;
   justify-content: center;
   align-items: center;
